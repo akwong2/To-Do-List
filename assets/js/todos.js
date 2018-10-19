@@ -14,10 +14,14 @@ $("ul").on("click", "span", function(event) {
 $("input[type='text']").keypress(function(event) {
 	if (event.which === 13) {
 		// set new todo input into a variable
-		var todoText = $(this).val();
+		let todoText = $(this).val();
 		// append to ul
-		$("ul").append("<li><span>X</span> " + todoText + "</li>");
+		$("ul").append("<li><span><i class='fas fa-trash-alt'></i></span> " + todoText + "</li>");
 		// clear input
 		$(this).val("");
 	}
 });
+
+$(".fa-plus").click(function() {
+	$("input[type=text]").fadeToggle();
+})
